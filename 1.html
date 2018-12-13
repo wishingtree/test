@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .we-dialog__mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .we-dialog__box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            border-radius: 12px;
+            z-index: 1001;
+            background-color: #fff;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .we-dialog__modal__title {
+            height: 40px;
+            line-height: 20px;
+            padding-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            color: #445c95;
+        }
+        .modal-question .we-dialog__modal__content {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 0 17px;
+            font-size: 13px;
+        }
+
+        .we-dialog__modal__content {
+            margin-top: 20px;
+            padding: 0 20px;
+            line-height: 1.8;
+            color: #435c95;
+        }
+    </style>
+</head>
+<body>
+        <div class="we-dialog ng-scope" ng-if="isShowQa">
+                <div class="we-dialog__mask" ng-click="showQa()"></div>
+                <div class="we-dialog__box modal-question">
+                    <div class="we-dialog__modal">
+                        <div class="we-dialog__modal__title">常见问题</div>
+                        <div class="we-dialog__modal__content">
+                            <div class="">
+                                <div class="modal-question__title">
+                                    1、银行卡不在身边怎么办？
+                                </div>
+                                <div class="modal-question__content">
+                                    打开手机银行app查询并复制银行卡号。
+                                </div>
+                                <div class="modal-question__title">
+                                    2、支持绑定哪些银行卡？
+                                </div>
+                                <div class="modal-question__content">
+                                    只支持绑定储蓄卡，支持银行如下： 工行、农行、中行、建行、交行、光大、广发、平安、浦发、兴业、招商、中信。
+                                </div>
+                                <div class="modal-question__title">
+                                    3、提示“请检查姓名、身份证号、银行卡号是否填写正确或手机是否银行预留的手机号”是什么原因？
+                                </div>
+                                <div class="modal-question__content">
+                                    是指所输入的姓名、身份证号、银行卡号、手机号与发卡银行预留的不一致，请仔细核对或与发卡银行联系。
+                                </div>
+                                <div class="modal-question__title">
+                                    4、提示“请更换绑定银行卡或到银联官网开通无卡支付业务后重试尚未开通无卡支付业务”是什么原因？
+                                </div>
+                                <div class="modal-question__content">
+                                    交行、平安、浦发，上述银行卡请登录银联在线开通银联在线支付，如果开通后还不能支付再咨询发卡行。<a href="https://static.95516.com/static/help/detail_129.html">https://static.95516.com/static/help/detail_129.html</a>。
+                                </div>
+                                <div class="modal-question__title">
+                                    5、提示“身份核查有误，请核实后重试” 是什么原因？
+                                </div>
+                                <div class="modal-question__content">
+                                    请检查姓名、身份证号的正确性。
+                                </div>
+                                <div class="modal-question__title">
+                                    6、充值报密码错误？
+                                </div>
+                                <div class="modal-question__content">
+                                    请输入您刚设置的密码，如忘记密码请点击密码框下“忘记密码”进行重置。
+                                </div>
+                                <div class="modal-question__title">
+                                    7、提示“您在微众的账户已超出限额，暂不支持参与活动” 是什么原因？
+                                </div>
+                                <div class="modal-question__content">
+                                    指你在微众银行的三类户收付已达5万，暂不支持参与活动。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="we-dialog__ft">
+                        <button class="we-dialog__btn" ng-click="showQa()">关闭</button>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
